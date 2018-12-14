@@ -101,7 +101,7 @@ routes.get('/checkout', checkToken, (req, res) => {
 // POST orders - utowrzenie zamówienia
 routes.post('/orders', checkToken, (req, res) => {
     var body = req.body,
-        orderId = body.orderId,
+        orderId = body.orderid,
         orderdate = body.orderdate,
         employeeId = body.employeeid,
         status = body.status,
