@@ -131,8 +131,8 @@ routes.post('/orders', checkToken, (req, res) => {
             });
 
             if (status === "Ukończono") {
-                OrderDetails.forEach((detail => {
-                    Warehouse.findOne({ where: { productid: detail.productid } })
+                orderDetails.forEach((detail => {
+                    Warehouse.findOne({ where: { productid: detail.productId } })
                     .then(item => {
                         item.increment('quantity', { by: detail.quantity });
                     });
